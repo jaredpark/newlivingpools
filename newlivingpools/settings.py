@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
 project_name = 'newlivingpools'
-site_url = '.jpark.pythonanywhere.com'
+site_url = '.mywebsiteprogress.com'
 SITE_ID = 1
 
 import django.conf.global_settings as DEFAULT_SETTINGS
