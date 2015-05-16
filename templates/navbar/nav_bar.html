@@ -1,0 +1,47 @@
+{% load static %}
+{% load cms_tags %}
+
+<div class='navbar_top'></div>
+<header id="myNavbar">
+  <div class="myContainer">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span style=''>Menu</span>
+      </button>
+      <div class='nav_top_row call'>
+        <div><a id='call' class='btn green' href='tel:{{ company_phone_link }}'>Call Now</a></div>
+        <div id='phone'>{{ company_phone_text }}</div>
+      </div>
+      <div class='nav_top_row logo'>
+        <a class='custom-logo' href="{% page_url 'home' %}"><img class='img-responsive' src="{% static logo_file_name %}" alt='{{company_name'></a>
+      </div>
+      <div class='nav_top_row contact'>
+        <div class="panel-group" id="navbar-contact" role="tablist" aria-multiselectable="true">
+          <div role="tab">
+            <a class="btn green" data-toggle="collapse" data-parent="#navbar-contact" href="#navbar-contact-1" aria-expanded="false" aria-controls="navbar-contact-1">
+              Schedule Now
+            </a>
+          </div>
+          <div id="navbar-contact-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="navbar-contact-1">
+            <div class="panel-body">
+              {% static_placeholder 'quick_contact' %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='myContainer navbar_link_container'>
+    <nav class="navbar-collapse collapse" id="navbar_links">
+      <ul class="nav navbar-nav">
+        <li><a href="{% page_url navbar_link1_name %}"> {{ navbar_link1_text }} </a></li>
+        <li><a href="{% page_url navbar_link2_name %}"> {{ navbar_link2_text }} </a></li>
+        <li><a href="{% page_url navbar_link3_name %}"> {{ navbar_link3_text }} </a></li>
+        <li><a href="{% page_url navbar_link4_name %}"> {{ navbar_link4_text }} </a></li>
+        <li><a href="{% page_url navbar_link5_name %}"> {{ navbar_link5_text }} </a></li>
+        <li><a href="{% page_url navbar_link6_name %}"> {{ navbar_link6_text }} </a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,30 @@
+{% extends 'cms/base_no_sidebar.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+{% load cms_tags %}
+
+{% block page_content_block %}
+{% static_placeholder 'main_image' %}
+<h1>Get In Touch Today</h1>
+<div style='float: left; width: 100%; text-align: center;'>
+    <div class='col-sm-6'>
+		{% if contact_form %}
+			{% include 'contact/contact_form.html' %}
+		{% endif %}
+		{% if first_name %}
+			<h4 style='text-align:center;'>Got it {{ first_name }} - we'll be in touch within one business day.</h4>
+			<p style='text-align:center;'>For now, take a look at the rest of our <a href='{% page_url 'all_services' %}'>services</a>.</p>
+		{% endif %}
+	</div>
+	<div class='col-sm-6'>			
+        <iframe id='google_map' alt="Google Map" src="https://www.google.com/maps/embed?pb=!1m20!1m8!1m3!1d3330.26296238072!2d-112.459525!3d33.416388!3m2!1i1024!2i768!4f13.1!4m9!1i0!3e6!4m0!4m5!1s0x872b37a7284c38fd%3A0x83e7c89be1cb206f!2s18615+W+Superior+Ave%2C+Goodyear%2C+AZ+85338!3m2!1d33.416388!2d-112.459525!5e0!3m2!1sen!2sus!4v1431743986824" frameborder="0" style="border:0"></iframe>
+    </div>
+</div>
+<address style='float: left; width: 100%; text-align: center; margin: 30px auto;'>
+	<p style='font-size:20px'>{{ company_name }}</h4>
+    <p>{{ company_phone_text }}</p>
+    <p>{% include 'misc_pages/email.html' %}</p>
+    <p>{{ company_address }}</p>
+</address>
+{% endblock page_content_block %}
